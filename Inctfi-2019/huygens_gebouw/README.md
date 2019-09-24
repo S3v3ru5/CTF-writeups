@@ -53,7 +53,7 @@ As i know the Bleichenbacher padding oracle attack on rsa, i searched to check i
 
 How does the “biased-k attack” on (EC)DSA work?
 
-what ?? "biased-k attack" i never heard that name.so, i searched for it and found that there's a challenge based on this attack in cryptopals set 8 {62. Key-Recovery Attacks on ECDSA with Biased Nonces}(https://toadstyle.org/cryptopals/62.txt).
+what ?? "biased-k attack" i never heard that name.so, i searched for it and found that there's a challenge based on this attack in cryptopals set 8 [62. Key-Recovery Attacks on ECDSA with Biased Nonces](https://toadstyle.org/cryptopals/62.txt).
 
 After reading the cryptopals challenge 62 description completely and reviewing the gen_rand function given in our challenge,guess what gen_rand function also generates random numbers in the same way with a little modification.
 
