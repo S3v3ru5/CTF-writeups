@@ -92,7 +92,7 @@ and
 D = (D + C)*(x**1) + S3
 D = (D + (A*x + B*x + S0*x + S1*x + S2))*x + S3
 D = ((B + S1) + (A*x + B*x + S0*x + S1*x + S2))*x + S3
-D = B*x + S1*x + A*(x**2) + B*(x\**2) + S0*(x**2) + S1*(x**2) + S2*x + S3
+D = B*x + S1*x + A*(x**2) + B*(x**2) + S0*(x**2) + S1*(x**2) + S2*x + S3
 D = A*x**2 + B*(x + x**2) + S0*x**2 + S1*(x + x**2) + S2*x + S3
 </pre>
 After first round
@@ -106,13 +106,13 @@ C = A*(polynomial t1) + B*(polynomial t2) + (combinations of subkeys S0, S1, ...
 D = A*(polynomial t3) + B*(polynomial t4) + (combination of subkeys S0, S1, ... S37   K2)
 </pre>
 <pre>
-Seeing C, D after 1st round in this form
+Seeing C, D after 1st round in this form will give
 t1 = x, t2 = x , K1 = S0*x + S1*x + S2
 
 t3 = x**2, t4 = (x + x**2) , K2  = S0*x**2 + S1*(x + x**2) + S2*x + S3
 </pre>
-I used sage to calculate t1, t2, t3, t4 as calculation them by hand will be impossible.
-after 18 rounds they turned out to be
+I used sage to calculate t1, t2, t3, t4 as calculating them by hand will be impossible.
+After 18 rounds they turned out to be
 <pre>
 t1 = x**28 + x**24 + x**22 + x**21 + x**17 + x**16 + x**15 + x**13 + x**11 + x**10 + x**4 + x**3 + 1
 t2 = x**31 + x**30 + x**29 + x**28 + x**22 + x**21 + x**20 + x**14 + x**12 + x**11 + x**8 + x**5 + x**2 + x
@@ -125,7 +125,7 @@ So, After 18 rounds final Ciphertexts C, D will be
 C = A*t1 + B*t2 + K1
 D = A*t3 + B*t4 + K2
 </pre>
-representing relation in form of matrices helps for better visualisation
+representing relation in form of matrices helps in better understanding
 <pre>
 
 T*Pt + K = Ct
