@@ -10,25 +10,25 @@ Service works as follow
 4.) we have to calculate the other message(m2) by using the given m1, c1, c2.
 
 </pre>
-<br>
-This process is repeated 10 times. If we were able to decrypt the message m2 all 10 times then the server greets with the flag.<br>
-<br><br>
+This process is repeated 10 times. If we were able to decrypt the message m2 all 10 times then the server greets with the flag.
 The main part of the Rudolph Cipher for us is <br>
+
 ```python
-	def encrypt(self, message):
-	    print(message[:self.word_size / 8])
-	    print(message[self.word_size / 8:])
-	    A = bytes_to_int(message[:self.word_size / 8])
-	    B = bytes_to_int(message[self.word_size / 8:])
-	    A = A ^ self.S[0]
-	    B = B ^ self.S[1]
-	    for i in range(1, self.rounds + 1):
-	        A = rotate_left((A ^ B), i, self.word_size) ^ self.S[2 * i]
-	        B = rotate_left((B ^ A), i, self.word_size) ^ self.S[2 * i + 1]
-	    print("C = "+str(A))
-	    print("D = "+str(B))
-	    return int_to_bytes(A,self.word_size) + int_to_bytes(B,self.word_size)
+def encrypt(self, message):
+    print(message[:self.word_size / 8])
+    print(message[self.word_size / 8:])
+    A = bytes_to_int(message[:self.word_size / 8])
+    B = bytes_to_int(message[self.word_size / 8:])
+    A = A ^ self.S[0]
+    B = B ^ self.S[1]
+    for i in range(1, self.rounds + 1):
+	A = rotate_left((A ^ B), i, self.word_size) ^ self.S[2 * i]
+	B = rotate_left((B ^ A), i, self.word_size) ^ self.S[2 * i + 1]
+    print("C = "+str(A))
+    print("D = "+str(B))
+    return int_to_bytes(A,self.word_size) + int_to_bytes(B,self.word_size)
 ```
+
 
 
 
