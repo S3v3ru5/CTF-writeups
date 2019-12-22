@@ -33,20 +33,21 @@ Now, in order to get the flag we have to decrypt a random ciphertext by using a 
 
 <h3> Breaking the Rudolph Cipher </h3>
 In the encryption function all the operations are either xor or rotation. And this operation are done on the 32 bit integers.
-remember A, B are 4 bytes each & all the subkeys are also 32 bit integers.
-Most important thing to know in order to solve this challenge is that <h6>xor is same as the addition in finite field GF(2)</h6>
+remember A, B are 4 bytes each & all the subkeys are also 32 bit integers.<br>
+Most important thing to know in order to solve this challenge is that <h4>xor is same as the addition in finite field GF(2)</h4>
 so, if we consider A, B to be binary vectors (vectors with only 1 & 0 as entries) in GF(2).<br>
 we can represent xor between A, B or S as Vector addition and if all the operations done in the encryption process are xor alone then, Complete encryption can be represented as sum of the vector with plaintext vectors & subkey vectors resulting in the ciphertext vectors.<br>
-From One plaintext and ciphertext pairs we can extract all the subkey part using appropriate vector operations & use that to decrypt the other Ciphertext.
+From One plaintext and ciphertext pairs we can extract all the subkey part using appropriate vector operations & use that to decrypt the other Ciphertext.<br>
 But in our challenge another operation is also included that is rotation of bits.
 We can't represent rotation as an vector operation & above process will not work.
 
-We can represent the rotation of bits as the multiplication operation if we consider the numbers as the elements(polynomials) of extension field GF(2^32) with modulus = y\**32 + 1.(but resultant is not a field but a PolynomialRing as modulus = y\**32 + 1 is reducible ).
-
-To clear up about considering numbers as the polynomials,<br>
-consider a = 1920282659. a is a 32 bit integer it's binary notation is <br>
-a = (1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1) <br>
+But We can represent the rotation of bits as the multiplication operation if we consider the numbers as the elements(polynomials) of extension field GF(2^32) with modulus = y\**32 + 1.(but resultant is not a field but a PolynomialRing as modulus = y\**32 + 1 is reducible ).
+<pre>
+To clear up about considering numbers as the polynomials,
+consider a = 1920282659. a is a 32 bit integer it's binary notation is 
+a = (1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1) 
 so, resulting polynomial would be <br>
+<pre>
 
 ```python
 a_poly = 0
@@ -54,8 +55,10 @@ a = a[::-1]
 for i in range(32):
 	a_poly += a[i]*(x**i)
 ```
-In simple words (1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1) treated as <br>
-the coefficient vector of resulting polynomial with rightmost(lsb) bit as the coefficient of x\**0.<br>
+<pre>
+In simple words (1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1) 
+treated as the coefficient vector of resulting polynomial with rightmost(lsb) bit as the coefficient of x\**0.
+<pre>
 
 Coming back to idea of rotation of bits represented as polynomial operation.<br>
 rotate_left(A, i) operation is same as the A*(x\**i)(if we consider lsb as the constant term) in PolynomialRing.<br>
