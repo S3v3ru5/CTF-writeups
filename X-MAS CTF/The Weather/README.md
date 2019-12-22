@@ -1,4 +1,4 @@
-<h1> The Weather Challenge Writeup</h1>
+<h1> The Weather Challenge Writeup [pwn]</h1>
 
 In this Challenge we were given a service to connect, but no binary has been given.<br>
 When we connect to the service it prints a long base64 encoded string and asks us to give name as input after that
