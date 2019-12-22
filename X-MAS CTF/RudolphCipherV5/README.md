@@ -41,7 +41,7 @@ From One plaintext and ciphertext pairs we can extract all the subkey part using
 But in our challenge another operation is also included that is rotation of bits.
 We can't represent rotation as an vector operation & above process will not work.
 
-But We can represent the rotation of bits as the multiplication operation if we consider the numbers as the elements(polynomials) of extension field GF(2^32) with modulus = y\**32 + 1.(but resultant is not a field but a PolynomialRing as modulus = y\**32 + 1 is reducible ).
+But We can represent the rotation of bits as the multiplication operation if we consider the numbers as the elements(polynomials) of extension field GF(2^32) with modulus = y\**32 + 1.(As the modulus is y\**32 + 1 resultant will not be a field but a PolynomialRing cause modulus = y\**32 + 1 is reducible ).
 <pre>
 To clear up about considering numbers as the polynomials,
 consider a = 1920282659. a is a 32 bit integer it's binary notation is 
