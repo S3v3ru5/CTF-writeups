@@ -11,7 +11,7 @@ Service works as follow
 
 </pre>
 This process is repeated 10 times. If we were able to decrypt the message m2 all 10 times then the server greets with the flag.
-The main part of the Rudolph Cipher for us is <br>
+<br><br>The main part of the Rudolph Cipher for us is 
 
 ```python
 def encrypt(self, message):
