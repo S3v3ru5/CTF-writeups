@@ -39,20 +39,23 @@ def make_shares(secret, k, shares, prime=PRIME):
 
 All the noises and random values required for paillier encryption are generated using PRNG256 class defined in `chall.py`.
 
-In the paillier_enc function, observe that all the public keys `ni` contains `(p + noise(ei))` as a factor. p is same for all the
+In the paillier_enc function, observe that all the public keys `ni` contains `(p + noise(ei))` as a factor. `p` is same for all the
 `ni`. <br> 
 My intial thought was to use this fact to solve the challenge, but I haven't got any lead. So, I left that thought and looked for any other ways and I finally took the following approach to solve this challenge.
 
-First step is to decrypt the paillier encrypted shares.
-Paillier encryption works as follows.
+First step is to decrypt the paillier encrypted shares.<br>
+Paillier encryption in this challenge works as follows.
 
-generate n = p\*q &nbsp;&nbsp;&nbsp;  (p & q are primes) <br>
-generate g = (1 + r1*n) % n\**2 &nbsp;&nbsp;&nbsp; (r1 can be random or equal to 1) <br>
-ciphertext = (g\**m)\*(r2\**n) % n\**2 &nbsp;&nbsp;&nbsp; (m is the message we want to encrypt and r2 is a random value). <br>
+```
+generate n = p*q    (p & q are primes) <br>
+generate g = (1 + r1*n) mod n**2   (r1 can be random or equal to 1) <br>
+ciphertext = (g**m)*(r2**n) mod n**2   (m is the message we want to encrypt and r2 is a random value). 
+```
+<br>
 
 To decrypt we would need phi(n) = (p-1)\*(q-1) which requires factorization of n.
 
-Another way we can decrypt the paillier encrypted ciphertext that I found requires the random values r1 and r2.
+Another way, we can decrypt the paillier encrypted ciphertext that I used requires the random values r1 and r2.
 
 Given r1, r2 (random values used in paillier encryption) and \[n, g\] (public key) and ciphertext. <br>
 we can obtain (g\**m) mod n\**2 by multiplying ciphertext c with the inverse of (r2\**n) modulo n\**2. <br>
