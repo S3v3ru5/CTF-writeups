@@ -95,7 +95,7 @@ r2 too and Using them we can successfully decrypt the paillier encrypted shares.
 
 After the successfully decryption of shares, we doesn't not obtain the f(x) but f(x) + noise(ei). we have to find the noise term for each share and subtract it from the decrypted (f(x) + ei) for f(x).
 
-Observe that noise terms also generated using PRNG256 and PRNG256 is not seeded everytime (not seeded for each share).
+Notice that noise terms are also generated using PRNG256 and PRNG256 is not seeded everytime (not seeded for each share).
 <br><br>
 We are given 5 encrypted shares, we can obtain r1 used in the encryption of first share and generate all the random numbers
 which are used afterwards. So, In this way we can also generate the noise used for shares 2,3,4,5 and successfully obtain the f(x2), f(x3), f(x4), f(x5).
