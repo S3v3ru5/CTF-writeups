@@ -117,7 +117,7 @@ After obtaining p, we can calculate the flag using above mentioned method.
 
 <h4> FLAG :: zer0pts{excellent_w0rk!y0u_are_a_master_0f_crypt0!!!} </h4>
 
-You can see the implementation of the solution [here](link).<br><br>
+You can see the implementation of the solution [here](https://github.com/S3v3ru5/CTF-writeups/blob/master/zer0pts/dirty%20laundry/solve.sage).<br><br>
 <h1> References </h1><br>
 1. <a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing"> Shamir's Secret Sharing </a><br>
 2. <a href="https://en.wikipedia.org/wiki/Paillier_cryptosystem"> Paillier Cryptosystem </a><br>
