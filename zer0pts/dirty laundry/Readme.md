@@ -93,7 +93,7 @@ returned by rand() method. <br>
 For each share we can obtain r1 using the above method. r1 and r2 are generated using prng.rand(). so, we can simply obtain
 r2 too and Using them we can successfully decrypt the paillier encrypted shares.
 
-After the successfully decryption of shares, we doesn't not obtain the f(x) but f(x) + noise(ei). we have to find the noise term for each share and subtract it from the decrypted (f(x) + ei).
+After the successfully decryption of shares, we doesn't not obtain the f(x) but f(x) + noise(ei). we have to find the noise term for each share and subtract it from the decrypted (f(x) + ei) for f(x).
 
 Observe that noise terms also generated using PRNG256 and PRNG256 is not seeded everytime (not seeded for each share).
 <br><br>
@@ -109,8 +109,8 @@ degree polynomial.<br><br>
 As degree of f(x) is 2 the coefficient of monomial x\**3 in lagrange polynomial should be zero modulo p 
 (i.e multiple of p).
 
-If we have more than 4 shares we can select a random subset of the 4 points and calculate the coefficient of 3rd degree monomial and gcd of all such coefficients would give the p directly and sometimes we would have to remove small factors to obtain.<br>
-Here we have only 4 shares we can only obtain a single number with p as factor. Lucky for us the coefficient as a very small
+If we have more than 4 shares we can select a random subset of the 4 points and calculate the coefficient of 3rd degree monomial and gcd of all such coefficients would give the p directly and sometimes we would have to remove small factors to obtain prime p.<br>
+Here we have only 4 shares we can only obtain a single number which contains p as factor. Lucky for us the coefficient has a very small
 additional factors and removing them gives our required prime p.
 
 After obtaining p, we can calculate the flag using above mentioned method.
