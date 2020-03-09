@@ -87,14 +87,14 @@ r2 too and Using them we can successfully decrypt the paillier encrypted shares.
 After the successfully decryption of shares, we doesn't not obtain the f(x) but f(x) + noise(ei). we have to find the noise term for each share and subtract it from the decrypted (f(x) + ei).
 
 Observe that noise terms also generated using PRNG256 and PRNG256 is not seeded everytime (not seeded for each share).
-
+<br>
 we are given 5 encrypted shares, we can obtain r1 used in the encryption of first share and generate all the random numbers
 which are used afterwards. So, In this way we can also generate the noise used for shares 2,3,4,5 and successfully obtain the f(x2), f(x3), f(x4), f(x5).
-
-Along with x2, x3, x4, x5 and f(x2), f(x3), f(x4), f(x5) we also have to know the field in order to extract the secret.
+<br>
+Along with x2, x3, x4, x5 and f(x2), f(x3), f(x4), f(x5) we also have to know the field in order to extract the secret.<br>
 If we know the prime p, we can use lagrange interpolation of the points (xi, f(xi)) over GF(p) and calculating f(0) gives
 the secret.
-But we don't know the prime p.
+But we don't know the prime p.<br><br>
 To obtain the prime p we use the fact that f(x) is quadratic polynomial (degree = 2) and lagrange polynomial is the lowest
 degree polynomial. as degree of f(x) is 2 the coefficient of monomial x\**3 in lagrange polynomial should be zero modulo p 
 i.e multiple of p.
