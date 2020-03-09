@@ -110,7 +110,7 @@ After obtaining p, we can calculate the flag using above mentioned method.
 
 You can implementation of the solution [here](link).<br><br>
 <h1> References </h1><br>
-1. [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing).<br>
+1. [Shamir'sSecretSharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing).<br>
 2. [Paillier cryptosystem](https://en.wikipedia.org/wiki/Paillier_cryptosystem).<br>
 
 
