@@ -108,11 +108,11 @@ After obtaining p, we can calculate the flag using above mentioned method.
 
 <h5> FLAG :: zer0pts{excellent_w0rk!y0u_are_a_master_0f_crypt0!!!} </h5>
 
-You can implementation of the solution [here](link).<br>
-<h5> References </h5>
-1. [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing).
-2. [Paillier cryptosystem](https://en.wikipedia.org/wiki/Paillier_cryptosystem).
-3. [Balsn's Writeup of RCTF Crypto Challenge f(x)](https://balsn.tw/ctf_writeup/20190518-rctf2019/#f(x)).
+You can implementation of the solution [here](link).<br><br>
+<h1> References </h1><br>
+1. [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing).<br>
+2. [Paillier cryptosystem](https://en.wikipedia.org/wiki/Paillier_cryptosystem).<br>
+
 
 
 
