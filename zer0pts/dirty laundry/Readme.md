@@ -46,9 +46,9 @@ My intial thought was to use this fact to solve the challenge, but I haven't got
 First step is to decrypt the paillier encrypted shares.
 Paillier encryption works as follows.
 
-generate n = p\*q  (p & q are primes) <br>
-generate g = (1 + r1*n) % n\**2 (r1 can be random or equal to 1) <br>
-ciphertext = (g\**m)*(r2\**n) % n\**2  (m is the message we want to encrypt and r2 is a random value). <br>
+generate n = p\*q     (p & q are primes) <br>
+generate g = (1 + r1*n) % n\**2   (r1 can be random or equal to 1) <br>
+ciphertext = (g\**m)\*(r2\**n) % n\**2     (m is the message we want to encrypt and r2 is a random value). <br>
 
 To decrypt we would need phi(n) = (p-1)\*(q-1) which requires factorization of n.
 
@@ -57,14 +57,14 @@ Another way we can decrypt the paillier encrypted ciphertext that I found requir
 Given r1, r2 (random values used in paillier encryption) and \[n, g\] (public key) and ciphertext. <br>
 we can obtain (g\**m) mod n\**2 by multiplying ciphertext c with the inverse of (r2\**n) modulo n\**2. <br>
 given the (g\**m) we can obtain the message <br>
-`m = (g\**m - 1)/(r1*n)` <br>
+`m = (g**m - 1)/(r1*n)` <br>
 The proof of this is <br>
 Using the Binomial Expansion <br>
 ```
-(1 + r1*n\)\**x = 1 + x\*(r1\*n) + (xC2)\*(r1\*n)\**2 + ...
-(1 + r1*n)\**x mod n\**2 = 1 + x\*(r1\*n) mod n\**2
+(1 + r1*n)**x = 1 + x*(r1*n) + (xC2)*(r1*n)**2 + ...
+(1 + r1*n)**x mod n**2 = 1 + x*(r1*n) mod n**2
 
-x = (((1 + r1*n)\**x) - 1)/(r1*n)
+x = (((1 + r1*n)**x) - 1)/(r1*n)
 ```
 
 we have all the terms except r1 and r2. <br>
