@@ -37,10 +37,10 @@ def make_shares(secret, k, shares, prime=PRIME):
     return n, g, c
 ```
 
-all the noises and random values required for paillier encryption are generated using PRNG256 class defined in `chall.py`.
+All the noises and random values required for paillier encryption are generated using PRNG256 class defined in `chall.py`.
 
-In the paillier_enc function, observe that all the public keys ni contains (p + noise(ei)) as a factor. p is same for all the
-ni. <br> 
+In the paillier_enc function, observe that all the public keys `ni` contains `(p + noise(ei))` as a factor. p is same for all the
+`ni`. <br> 
 My intial thought was to use this fact to solve the challenge, but I haven't got any lead. So, I left that thought and looked for any other ways and I finally took the following approach to solve this challenge.
 
 First step is to decrypt the paillier encrypted shares.
