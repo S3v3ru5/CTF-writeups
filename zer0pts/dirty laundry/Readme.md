@@ -46,9 +46,9 @@ My intial thought was to use this fact to solve the challenge, but I haven't got
 First step is to decrypt the paillier encrypted shares.
 Paillier encryption works as follows.
 
-generate n = p\*q     (p & q are primes) <br>
-generate g = (1 + r1*n) % n\**2   (r1 can be random or equal to 1) <br>
-ciphertext = (g\**m)\*(r2\**n) % n\**2     (m is the message we want to encrypt and r2 is a random value). <br>
+generate n = p\*q &nbsp;&nbsp;&nbsp;  (p & q are primes) <br>
+generate g = (1 + r1*n) % n\**2 &nbsp;&nbsp;&nbsp; (r1 can be random or equal to 1) <br>
+ciphertext = (g\**m)\*(r2\**n) % n\**2 &nbsp;&nbsp;&nbsp; (m is the message we want to encrypt and r2 is a random value). <br>
 
 To decrypt we would need phi(n) = (p-1)\*(q-1) which requires factorization of n.
 
@@ -87,16 +87,17 @@ r2 too and Using them we can successfully decrypt the paillier encrypted shares.
 After the successfully decryption of shares, we doesn't not obtain the f(x) but f(x) + noise(ei). we have to find the noise term for each share and subtract it from the decrypted (f(x) + ei).
 
 Observe that noise terms also generated using PRNG256 and PRNG256 is not seeded everytime (not seeded for each share).
-<br>
-we are given 5 encrypted shares, we can obtain r1 used in the encryption of first share and generate all the random numbers
+<br><br>
+We are given 5 encrypted shares, we can obtain r1 used in the encryption of first share and generate all the random numbers
 which are used afterwards. So, In this way we can also generate the noise used for shares 2,3,4,5 and successfully obtain the f(x2), f(x3), f(x4), f(x5).
-<br>
+<br><br>
 Along with x2, x3, x4, x5 and f(x2), f(x3), f(x4), f(x5) we also have to know the field in order to extract the secret.<br>
 If we know the prime p, we can use lagrange interpolation of the points (xi, f(xi)) over GF(p) and calculating f(0) gives
 the secret.
 But we don't know the prime p.<br><br>
-To obtain the prime p we use the fact that f(x) is quadratic polynomial (degree = 2) and lagrange polynomial is the lowest
-degree polynomial. as degree of f(x) is 2 the coefficient of monomial x\**3 in lagrange polynomial should be zero modulo p 
+To obtain the prime p we use the fact that f(x) is quadratic polynomial (degree = 2) and lagrange polynomial gives the lowest
+degree polynomial.<br><br>
+As degree of f(x) is 2 the coefficient of monomial x\**3 in lagrange polynomial should be zero modulo p 
 i.e multiple of p.
 
 
