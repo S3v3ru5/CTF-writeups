@@ -92,13 +92,27 @@ We are given 5 encrypted shares, we can obtain r1 used in the encryption of firs
 which are used afterwards. So, In this way we can also generate the noise used for shares 2,3,4,5 and successfully obtain the f(x2), f(x3), f(x4), f(x5).
 <br><br>
 Along with x2, x3, x4, x5 and f(x2), f(x3), f(x4), f(x5) we also have to know the field in order to extract the secret.<br>
-If we know the prime p, we can use lagrange interpolation of the points (xi, f(xi)) over GF(p) and calculating f(0) gives
+If we know the prime p, we can use lagrange interpolation on the points (xi, f(xi)) over GF(p) and calculating f(0) gives
 the secret.
 But we don't know the prime p.<br><br>
 To obtain the prime p we use the fact that f(x) is quadratic polynomial (degree = 2) and lagrange polynomial gives the lowest
 degree polynomial.<br><br>
 As degree of f(x) is 2 the coefficient of monomial x\**3 in lagrange polynomial should be zero modulo p 
-i.e multiple of p.
+(i.e multiple of p).
+
+If we have more than 4 shares we can select a random subset of the 4 points and calculate the coefficient of 3rd degree monomial and gcd of all such coefficients would give the p directly and sometimes we would have to remove small factors to obtain.<br>
+Here we have only 4 shares we can only obtain a single number with p as factor. Lucky for us the coefficient as a very small
+additional factors and removing them gives our required prime p.
+
+After obtaining p, we can calculate the flag using above mentioned method.
+
+<h5> FLAG :: zer0pts{excellent_w0rk!y0u_are_a_master_0f_crypt0!!!} </h5>
+
+You can implementation of the solution [here](link).<br>
+<h5> References </h5>
+1. [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing).
+2. [Paillier cryptosystem](https://en.wikipedia.org/wiki/Paillier_cryptosystem).
+3. [Balsn's Writeup of RCTF Crypto Challenge f(x)](https://balsn.tw/ctf_writeup/20190518-rctf2019/#f(x)).
 
 
 
