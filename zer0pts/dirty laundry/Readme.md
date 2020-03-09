@@ -110,6 +110,6 @@ After obtaining p, we can calculate the flag using above mentioned method.
 
 You can implementation of the solution [here](link).<br><br>
 <h1> References </h1><br>
-1. <a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing"> Shamir's Secret Sharing </a>
-2. <a href="https://en.wikipedia.org/wiki/Paillier_cryptosystem"> Paillier Cryptosystem </a>
-3. <a href="https://balsn.tw/ctf_writeup/20190518-rctf2019/#f(x)"> Balsn's Writeup of RCTF 2019 Crypto Challenge f(x) </a>
+1. <a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing"> Shamir's Secret Sharing </a><br>
+2. <a href="https://en.wikipedia.org/wiki/Paillier_cryptosystem"> Paillier Cryptosystem </a><br>
+3. <a href="https://balsn.tw/ctf_writeup/20190518-rctf2019/#f(x)"> Balsn's Writeup of RCTF 2019 Crypto Challenge f(x) </a><br>
