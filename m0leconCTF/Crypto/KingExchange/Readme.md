@@ -3,12 +3,12 @@
 
 Luckily, I got First blood for this challenge.
 
-For this challenge, we were given with two files `server.py` and `output.txt`.
+In this challenge, we were given with two files `server.py` and `output.txt`.
 
 The Execution flow of `server.py` is quite simple, it generates a key using `Diffie-Hellman Key Exchange` and `encrypts
 the flag using AES` with shared key.
 
-The Group over which the DH key exchange done is not given exactly, but at that of time I assumed from addition function
+The Group over which the DH key exchange done is not given exactly, but I assumed from addition function
 and Multiplication function that Group is related to Elliptic Curves.
 
 This is the code for Addition and Multiplication of points.
