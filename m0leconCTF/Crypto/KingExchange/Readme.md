@@ -43,17 +43,17 @@ if d = 0 <br>
 Assuming points are represented as `(x, y)` in `server.py` and `P = (x1, y1), Q = (x2, y2)`
 `add_points(P, Q)` function calculates new point as `(x3, y3) = x1x2 - y1y2 , x1y2 + x2y1.`
 
-clearly, both the formulas doesn't match and also neutral element of Edwards Curve is (0, 1) whereas neutral element used 
-in the multiply function is (1, 0). 
+clearly, both the formulas doesn't match and also neutral element of Edwards Curve is `(0, 1)` whereas neutral element used 
+in the multiply function is `(1, 0)`. 
 
-The formulas do match  if we consider that points in server.py are represented as `(y, x)`. 
+The formulas do match  if we consider that points in `server.py` are represented as `(y, x)`. 
 Assuming that points are represented in `(y, x)` form and `P = (y1, x1) , Q = (y2, x2).` <br>
 `add_points(P, Q)` function calculates new point as `(y3, x3) = (y1y2 - x1x2, x1y2 + x2y1).`
 
 Now, both formulas and neutral elements match exactly.
 
 Even though both formulas match, I am not sure whether this approach is correct or not because representing points in this `((y,x))` way
-is quite unusual and Another issue is that when we substitute d = 0 in Edwards Curve equation, it becomes, `x^2 + y^2 = 1` which is `not an Elliptic Curve` but an Equation of the Circle.
+is quite unusual and Another issue is that when we substitute d = 0 in Edwards Curve equation, it becomes, `x^2 + y^2 = 1` which is `not an Elliptic Curve` but an `Equation of the Circle`.
 
 The definition of the Edwards Curve also specifies that d != 0.
 
