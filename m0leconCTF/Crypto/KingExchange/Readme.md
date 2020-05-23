@@ -3,6 +3,8 @@
 
 Luckily, I got First blood for this challenge.
 
+Note :: This may not be the intended solution, I solved this challenge mostly by assuming something and verifying them.
+
 In this challenge, we were given with two files `server.py` and `output.txt`.
 
 The Execution flow of `server.py` is quite simple, it generates a key using `Diffie-Hellman Key Exchange` and `encrypts
