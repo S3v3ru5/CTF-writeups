@@ -3,7 +3,6 @@ import os
 from Crypto.Util.number import bytes_to_long
 from secrets import flag
 
-flag = "abcd"
 class IQuantumComputer:
     def __init__(self, nbits):
         self.nbits = nbits
