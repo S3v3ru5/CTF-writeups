@@ -2,17 +2,16 @@ from pwn import *
 from Crypto.Util.number import long_to_bytes
 
 counter = {}
-def init_prob(counter):
+def init_counter(counter):
 	for i in range(520):
-		counter[i] = {0:0, 1:1}
+		counter[i] = {0:0, 1:0}
 
-init_prob(counter)
+init_counter(counter)
 
 for i in range(100):
 	conn = remote("quantum.pwn2.win", 1337)
 	conn.recvline()
 	conn.sendline(b"0"*65)
-	# conn.interactive()
 	res = conn.recvline().strip()
 	print("i = ", i)
 	print("res = ", res)
@@ -25,7 +24,7 @@ for i in range(100):
 flag = ""
 
 for i in range(520):
-	if probabilities[i][0] < probabilities[i][1]:
+	if counter[i][0] < counter[i][1]:
 		flag += "1"
 	else:
 		flag += "0"
