@@ -1,4 +1,4 @@
-# Lost_qkeys crypto challenge Writeup
+# Lost_qKeys crypto challenge writeup
 
 In this challenge, we were given with [server-model.py](https://github.com/S3v3ru5/CTF-writeups/blob/master/Pwn2Win2020/Lost_qkeys/server-model.py) file and an netcat connection.<br>
 The `server-model.py` basically constructs a `quantum circuit` based on a `password`(taken from the user), `Key`(generated using  `os.urandom()`) and `flag`.
