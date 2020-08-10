@@ -10,7 +10,7 @@
 
 # <a name="polyrsa"></a> PolyRSA Challenge Writeup [Crypto]
 
-For this challenge we were given a single file [out.txt](Inctfi-2020/PolyRSA/out.txt) which contains commands used in sage interactive shell and there output.
+For this challenge we were given a single file [out.txt](/Inctfi-2020/PolyRSA/out.txt) which contains commands used in sage interactive shell and there output.
 
 In the `out.txt` file we have, three values
 
@@ -41,7 +41,7 @@ d = inverse_mod(e, s)
 m = pow(c, d, n)
 flag = bytes(m.coefficients()) 
 ```
-solution code :: [solve.sage](Inctfi-2020/PolyRSA/solve.sage)
+solution code :: [solve.sage](/Inctfi-2020/PolyRSA/solve.sage)
 
 Flag :: inctf{and_i_4m_ir0n_m4n}
 
@@ -50,7 +50,7 @@ Flag :: inctf{and_i_4m_ir0n_m4n}
 # <a name="dlpoly"></a> DLPoly challenge writeup [Crypto]
 
 Got second blood for this challenge.
-This challenge is similar to above challenge. we were given [out.txt](Inctfi-2020/DLPoly/out.txt) file which contains the commands and output in sage interactive shell.
+This challenge is similar to above challenge. we were given [out.txt](/Inctfi-2020/DLPoly/out.txt) file which contains the commands and output in sage interactive shell.
 
 In the `out.txt` file we have,
 - p = 35201
@@ -123,7 +123,7 @@ Flag :: inctf{bingo!}
 
 # <a name="bakflip"></a> Bakflip&sons challenge Writeup [Crypto]
 
-This challenge runs the [challenge.py](Inctfi-2020/Bakflip_n_sons/challenge.py) on the server. <br>
+This challenge runs the [challenge.py](/Inctfi-2020/Bakflip_n_sons/challenge.py) on the server. <br>
 It provides two functionalities `signMessage` and `getFlag`.<br>
 `signMessage` signs the given message using then`ecdsa` with `NIST198p` elliptic curve.<br>
 `getFlag` gives us the `flag` if we can provide the `ecdsa signature` of message `please_give_me_the_flag`.
@@ -217,7 +217,7 @@ secret_key_lsb =>
 ```
 Using the above approach with `2 bits`, we can calculate secret_key using less than `72` iterations and get the `flag`.
 
-There are a lot of small implementation details, check out my solution code :: [solve.sage](Inctfi-2020/Bakflip_n_sons/solve.sage)
+There are a lot of small implementation details, check out my solution code :: [solve.sage](/Inctfi-2020/Bakflip_n_sons/solve.sage)
 
 FLAG :: inctf{i_see_bitflip_i_see_family}
 
@@ -228,10 +228,10 @@ FLAG :: inctf{i_see_bitflip_i_see_family}
 Luckily I got First Blood for this challenge.
 
 we were given four files
-1. [ecc.py](Inctfi-2020/EaCy/ecc.py) contains classes to work with elliptic curves
-2. [ansi931.py](Inctfi-2020/EaCy/ansi931.py) contains classes to generate random data using ANSI X9.31 with AES 128
-3. [prng.py](Inctfi-2020/EaCy/prng.py) contains implementation of dual_ec_drbg random generator along with prng using ANSI X9.31
-4. [encrypt.py](Inctfi-2020/EaCy/encrypt.py)
+1. [ecc.py](/Inctfi-2020/EaCy/ecc.py) contains classes to work with elliptic curves
+2. [ansi931.py](/Inctfi-2020/EaCy/ansi931.py) contains classes to generate random data using ANSI X9.31 with AES 128
+3. [prng.py](/Inctfi-2020/EaCy/prng.py) contains implementation of dual_ec_drbg random generator along with prng using ANSI X9.31
+4. [encrypt.py](/Inctfi-2020/EaCy/encrypt.py)
 
 The basic flow of service is as follows
 - Generates a `random number` e using the `prng` defined in `prng.py`.
@@ -348,6 +348,6 @@ Final solution is
 - select option 2, predict the value of e, pass the check using above mentioned method 
 - get the `flag`  
 
-solution code :: [solve.sage](Inctfi-2020/EaCy/solve.sage)
+solution code :: [solve.sage](/Inctfi-2020/EaCy/solve.sage)
 
 FLAG :: inctf{Ev3ry_wa11_1s_4_d00r_but_7his_1s_4_D0ubl3_d0or}
